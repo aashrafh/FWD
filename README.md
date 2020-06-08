@@ -15,4 +15,6 @@
 
 * <strong>DOM:</strong> is a tree-like structure that is a representation of the HTML document, the relationship between elements, and contains the content and properties of the elements.
 
-* .innerText will get the visible text of the element. This is an important distinction! If CSS is used to hide any text inside that element, .innerText will not return that text, while .textContent will return it.
+* ```.innerText``` will get the visible text of the element. This is an important distinction! If CSS is used to hide any text inside that element, ```.innerText``` will not return that text, while ```.textContent``` will return it.
+* If an element already exists in the DOM and this element is passed to ```.appendChild()```, the ```.appendChild()``` method will move it rather than duplicating it.
+* ```.classList``` is by far the most helpful property of the bunch, and it helps to keep your CSS styling out of your JavaScript code.
