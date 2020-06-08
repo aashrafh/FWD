@@ -1,4 +1,5 @@
 # Notes
+<img src="https://video.udacity-data.com/topher/2017/December/5a22d197_ud117-l1-interface-chain/ud117-l1-interface-chain.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%;" alt="Node Interface"/>
 * <strong>DOM Process:</strong>
   * HTML is received
   * HTML tags are converted to tokens
