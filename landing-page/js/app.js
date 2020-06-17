@@ -12,7 +12,19 @@
  * JS Standard: ESlint
  *
  */
-
+function inViewport(element) {
+  const bounding = element.getBoundingClientRect();
+  if (
+    bounding.top >= 0 &&
+    bounding.left >= 0 &&
+    bounding.right <=
+      (window.innerWidth || document.documentElement.clientWidth) &&
+    bounding.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight)
+  )
+    return true;
+  else return false;
+}
 // build the nav
 (function() {
   const unorderedList = document.querySelector("ul");
@@ -23,7 +35,16 @@
 })();
 
 // Add class 'active' to section when near top of viewport
-
+(function() {
+  const sections = document.querySelectorAll("section");
+  window.addEventListener("scroll", () => {
+    sections.forEach(section => {
+      inViewport(section)
+        ? section.classList.add("active")
+        : section.classList.remove("active");
+    });
+  });
+})();
 // Scroll to anchor ID using scrollTO event
 (function() {
   const navList = document.getElementById("navbar__list");
