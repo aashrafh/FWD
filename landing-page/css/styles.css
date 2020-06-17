@@ -78,7 +78,9 @@ section {
   color: #fff;
   transition: ease 0.3s all;
 }
-
+.box {
+  float: right;
+}
 /* Header Styles */
 .page__header {
   background: #fff;
