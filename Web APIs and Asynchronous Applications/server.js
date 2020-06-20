@@ -13,3 +13,28 @@ const server = app.listen(port, () =>
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
+
+//////////////////////////////////////////////
+const appData = {
+  fName: "Ahmed",
+  lName: "Ashraf"
+};
+app.get("/all", (req, res) => {
+  res.send(appData);
+});
+
+const data = [];
+app.post("/flavor", addFlavor);
+
+function addFlavor(req, res) {
+  data.push(req.body);
+}
+
+app.post("/add", (req, res) => {
+  res.send("POST received");
+});
+app.post("/animal", addAnimal);
+
+function addAnimal(req, res) {
+  data.push(req.body);
+}
