@@ -19,3 +19,25 @@ const postRequest = async (enpoint='', body={})=>{
 }
 
 postRequest('/add', {ans: 42});
+
+///////////////////////////////////////
+
+const base = 'http://api.animalinfo.org/data/?animal=';
+const apiKey = '&appid=9dsa112dsa2...';
+
+document.getElementById('generate').addEventListener('click', getDate);
+function getDate(e) {
+    const animal = document.getElementById('animal').nodeValue;
+    getRequest(base,animal, apiKey);
+}
+
+const getRequest = async (base, data, key) => {
+    const res = await fetch(base+data+key);
+    try{
+        const data = await res.json();
+        console.log(date);
+        return data;
+    } catch(error){
+        console.log("error", error);
+    }
+}
