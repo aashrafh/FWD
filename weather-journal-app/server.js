@@ -18,3 +18,18 @@ app.use(cors());
 app.use(express.static("website"));
 
 // Setup Server
+const server = app.listen(8000, () => {
+  console.log("server is listening on port:", 8000);
+});
+
+app.get("/all", (req, res) => {
+  res.send(projectData);
+});
+
+app.post("/add", (req, res) => {
+  projectData.temperature = req.body.temperature;
+  projectData.date = req.body.date;
+  projectData.userResponse = req.body.userResponse;
+  res.send(projectData);
+  console.log(projectData);
+});
